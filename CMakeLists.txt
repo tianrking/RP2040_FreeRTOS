@@ -15,5 +15,6 @@ set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 
 add_subdirectory(helloworld)
-add_subdirectory(Task)
-add_subdirectory(Queue)
+add_subdirectory(Blinky_Task)
+add_subdirectory(Tasks_and_Queues)
+add_subdirectory(Scheduling_Task_Priorities)
