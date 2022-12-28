@@ -57,7 +57,7 @@ static void getTaskInfo(void * pvParameters){
       vTaskList(pcTaskInfo);
       printf("Name  Status Priority  Free_Stack PID\r\n");
       printf("%s\r\n" , pcTaskInfo);
-      vTaskDelay(pdMS_TO_TICKS(2000));
+      vTaskDelay(pdMS_TO_TICKS(4000));
    }
 }
 

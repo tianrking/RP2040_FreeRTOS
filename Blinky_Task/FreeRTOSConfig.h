@@ -84,6 +84,12 @@
 #define configUSE_TRACE_FACILITY                1
 #define configUSE_STATS_FORMATTING_FUNCTIONS    1
 
+// Add for configGENERATE_RUN_TIME_STATS vTaskGetRunTimeStats
+// extern volatile unsigned long long ullTimeCount;
+// #define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() (ullTimeCount=0)
+// #define portGET_RUN_TIME_COUNTER_VALUE() ullTimeCount
+
+
 /* Co-routine related definitions. */
 #define configUSE_CO_ROUTINES                   0
 #define configMAX_CO_ROUTINE_PRIORITIES         1
