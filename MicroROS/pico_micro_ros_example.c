@@ -10,6 +10,11 @@
 #include "pico/stdlib.h"
 #include "pico_uart_transports.h"
 
+#include "FreeRTOS.h"
+#include "task.h"
+
+static  TaskHandle_t handle_vROS_pub = NULL;
+
 const uint LED_PIN = 25;
 
 rcl_publisher_t publisher;

@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
 include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
+include($ENV{FREERTOS_KERNEL_PATH}/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake)
 
 project(pico_micro_ros_example C CXX ASM)
 set(CMAKE_C_STANDARD 11)
@@ -17,10 +18,13 @@ add_executable(pico_micro_ros_example
 target_link_libraries(pico_micro_ros_example
     pico_stdlib
     microros
+    FreeRTOS-Kernel 
+    FreeRTOS-Kernel-Heap4
 )
 
 target_include_directories(pico_micro_ros_example PUBLIC
     $ENV{micro_ROS_SDK_PATH}/libmicroros/include
+    ${CMAKE_CURRENT_LIST_DIR}
 )
 
 SET(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -ffunction-sections -fdata-sections")
