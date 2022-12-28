@@ -20,5 +20,11 @@ jobs:
         export PICO_SDK_PATH=~/pico-sdk
         export FREERTOS_KERNEL_PATH=~/FreeRTOS-Kernel
     - name: make
-      run:  mkdir build && cd build && cmake .. && make 
+      run: |
+        export PICO_SDK_PATH=~/pico-sdk
+        export FREERTOS_KERNEL_PATH=~/FreeRTOS-Kernel
+        mkdir build 
+        cd build 
+        cmake ..
+        make
     
