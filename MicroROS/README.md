@@ -1,0 +1,1 @@
+ export micro_ROS_SDK_PATH=~
