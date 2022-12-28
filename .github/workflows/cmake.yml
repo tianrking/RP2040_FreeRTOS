@@ -17,14 +17,17 @@ jobs:
       run: |
         git clone https://github.com/RaspberryPi/pico-sdk --recurse-submodules ~/pico-sdk
         git clone -b smp https://github.com/FreeRTOS/FreeRTOS-Kernel --recurse-submodules ~/FreeRTOS-Kernel
+        git clone https://github.com/micro-ROS/micro_ros_raspberrypi_pico_sdk ~/micro_ROS_SDK_PATH
         export PICO_SDK_PATH=~/pico-sdk
         export FREERTOS_KERNEL_PATH=~/FreeRTOS-Kernel
+        export micro_ROS_SDK_PATH=~/micro_ROS_SDK_PATH
     - name: make
       run: |
         sudo apt update
         sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib -y
         export PICO_SDK_PATH=~/pico-sdk
         export FREERTOS_KERNEL_PATH=~/FreeRTOS-Kernel
+        export micro_ROS_SDK_PATH=~/micro_ROS_SDK_PATH
         mkdir build 
         cd build 
         cmake ..
