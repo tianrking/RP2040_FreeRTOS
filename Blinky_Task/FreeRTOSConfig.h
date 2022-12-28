@@ -82,7 +82,7 @@
 /* Run time and task stats gathering related definitions. */
 #define configGENERATE_RUN_TIME_STATS           0
 #define configUSE_TRACE_FACILITY                1
-#define configUSE_STATS_FORMATTING_FUNCTIONS    0
+#define configUSE_STATS_FORMATTING_FUNCTIONS    1
 
 /* Co-routine related definitions. */
 #define configUSE_CO_ROUTINES                   0
@@ -135,5 +135,8 @@ to exclude the API function. */
 #define INCLUDE_xQueueGetMutexHolder            1
 
 /* A header file that defines trace macro can be included here. */
+
+// #define CONFIG_FREERTOS_USE_STATS_FORMATTING_FUNCTIONS 1
+// #define CONFIG_FREERTOS_USE_TRACE_FACILITY 1
 
 #endif /* FREERTOS_CONFIG_H */
