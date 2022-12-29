@@ -13,7 +13,7 @@ link_directories($ENV{micro_ROS_SDK_PATH}/libmicroros)
 
 add_executable(pico_micro_ros_motor_control
     pico_micro_ros_motor_control.c
-    pico_uart_transport.c
+    $ENV{micro_ROS_SDK_PATH}/pico_uart_transport.c
 )
 target_link_libraries(pico_micro_ros_motor_control
     pico_stdlib
@@ -28,6 +28,7 @@ target_link_libraries(pico_micro_ros_motor_control
 pico_generate_pio_header(pico_micro_ros_motor_control $ENV{pico_examples_PATH}/pio/quadrature_encoder/quadrature_encoder.pio)
 target_include_directories(pico_micro_ros_motor_control PUBLIC
     $ENV{micro_ROS_SDK_PATH}/libmicroros/include
+    $ENV{micro_ROS_SDK_PATH}
     ${CMAKE_CURRENT_LIST_DIR}
 )
 
